@@ -34,7 +34,7 @@ export class FeedbackListComponent {
         dnc: 'false',
         assigned: 'Denise Pena',
         datereceived: '07/24/2017',
-        notes: 'I received the Ultra book, and some of my colleagues are quite taken with it and want to steal it, so I was wondering if we are allowed to order more. How many are we allowed to get?'
+        notes: 'I received the Altru book, and some of my colleagues are quite taken with it and want to steal it, so I was wondering if we are allowed to order more. How many are we allowed to get?'
     },
     {
       id: '3',

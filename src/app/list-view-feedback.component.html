@@ -78,7 +78,7 @@
       heading="Note"
       width="250"
       description="Feedback notes received"
-      [template]="descriptionParagraphs"
+      [template]="notesTemplate"
       >
     </sky-grid-column>
   </sky-list-view-grid>
@@ -97,7 +97,7 @@
 
 <ng-template let-row="row" let-value="value" #feedbackDncTemplate>
   <div class="feedback-status" title="{{value}}">
-    <div *ngIf="value === 'true'" class="donotcontact">
+    <div *ngIf="value === 'true'" class="donotcontact" >
       <i class="fa fa-ban" aria-hidden="true"></i>
     </div>
     <div *ngIf="value === 'false'" class="contact">
@@ -105,8 +105,7 @@
   </div>
 </ng-template>
 
-<ng-template let-row="row" let-value="value" #descriptionParagraphs>
-  <div class="grid-text">
-    {{value}}
-  </div>
+<ng-template let-row="row" let-value="value" #notesTemplate>
+    <sky-text-expand maxLength="70" maxExpandedLength="70" expandModalTitle="Feedback" text="{{value}}">
+      </sky-text-expand>
 </ng-template>
