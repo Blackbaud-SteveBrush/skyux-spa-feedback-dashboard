@@ -21,7 +21,7 @@ export class FeedbackListComponent {
         dnc: 'false',
         assigned: 'Colleen Gutierrez',
         datereceived: '07/27/2017',
-        notes: ''
+        comment: ''
     },
     {
       id: '2',
@@ -34,7 +34,7 @@ export class FeedbackListComponent {
         dnc: 'false',
         assigned: 'Denise Pena',
         datereceived: '07/24/2017',
-        notes: 'I received the Altru book, and some of my colleagues are quite taken with it and want to steal it, so I was wondering if we are allowed to order more. How many are we allowed to get?'
+        comment: 'I received the Altru book, and some of my colleagues are quite taken with it and want to steal it, so I was wondering if we are allowed to order more. How many are we allowed to get?'
     },
     {
       id: '3',
@@ -47,7 +47,7 @@ export class FeedbackListComponent {
         dnc: 'false',
         assigned: 'RoxAnna Fuquay',
         datereceived: '07/19/2017',
-        notes: ''
+        comment: ''
     },
     {
       id: '4',
@@ -60,7 +60,7 @@ export class FeedbackListComponent {
         dnc: 'false',
         assigned: 'Bryna Gleich',
         datereceived: '07/17/2017',
-        notes: ''
+        comment: ''
     },
     {
       id: '5',
@@ -73,7 +73,7 @@ export class FeedbackListComponent {
         dnc: 'false',
         assigned: 'Denise Kadilak',
         datereceived: '07/13/2017',
-        notes: ''
+        comment: ''
     },
     {
       id: '6',
@@ -86,7 +86,7 @@ export class FeedbackListComponent {
         dnc: 'true',
         assigned: 'Betsy Unger',
         datereceived: '07/05/2017',
-        notes: ''
+        comment: ''
     },
     {
       id: '7',
@@ -99,6 +99,6 @@ export class FeedbackListComponent {
         dnc: 'false',
         assigned: 'Justin Ward',
         datereceived: '07/04/2017',
-        notes: '' }
+        comment: '' }
   ];
 }
