@@ -75,11 +75,11 @@
       >
     </sky-grid-column>
     <sky-grid-column
-      field="notes"
-      heading="Note"
+      field="comment"
+      heading="Feedback comments"
       width="250"
-      description="Feedback notes received"
-      [template]="notesTemplate"
+      description="Feedback comment received"
+      [template]="commentTemplate"
       >
     </sky-grid-column>
   </sky-list-view-grid>
@@ -106,7 +106,8 @@
   </div>
 </ng-template>
 
-<ng-template let-value="value" #notesTemplate>
+
+<ng-template let-value="value" #commentTemplate>
     <sky-text-expand maxLength="70" maxExpandedLength="70" expandModalTitle="Feedback" text="{{value}}">
       </sky-text-expand>
 </ng-template>
@@ -131,5 +132,4 @@
         </sky-dropdown-item>
       </sky-dropdown-menu>
     </sky-dropdown>
-
 </ng-template>
