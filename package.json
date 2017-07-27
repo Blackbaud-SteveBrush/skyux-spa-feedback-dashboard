@@ -1,0 +1,26 @@
+{
+  "name": "blackbaud-skyux-spa-feedback-dashboard",
+  "version": "0.0.1",
+  "description": "Single-page-application for skyux-spa-feedback-dashboard",
+  "main": "index.js",
+  "engines": {
+    "node": ">=6.11.1"
+  },
+  "scripts": {
+    "skyux": "skyux",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Blackbaud",
+  "license": "ISC",
+  "dependencies": {
+    "@blackbaud/skyux": "2.0.0-rc.9"
+  },
+  "devDependencies": {
+    "@blackbaud/skyux-builder": "1.0.0-rc.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Blackbaud-SteveBrush/skyux-spa-feedback-dashboard.git"
+  }
+}
