@@ -1,4 +1,21 @@
 {
   "mode": "easy",
-  "compileMode": "aot"
+  "compileMode": "aot",
+  "auth": true,
+  "omnibar": {
+    "experimental": true,
+    "nav": {
+      "services": [
+        {
+          "title": "Feedback Dashboard",
+          "items": [
+            {
+              "title": "Home",
+              "route": "/"
+            }
+          ]
+        }
+      ]
+    }
+  }
 }
