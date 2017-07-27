@@ -13,6 +13,7 @@
       heading=""
       width="40"
       description="Feedback actions"
+      [template]="menuTemplate"
       >
     </sky-grid-column>
     <sky-grid-column
@@ -105,7 +106,30 @@
   </div>
 </ng-template>
 
-<ng-template let-row="row" let-value="value" #notesTemplate>
+<ng-template let-value="value" #notesTemplate>
     <sky-text-expand maxLength="70" maxExpandedLength="70" expandModalTitle="Feedback" text="{{value}}">
       </sky-text-expand>
+</ng-template>
+
+<ng-template let-row="row" #menuTemplate>
+    <sky-dropdown buttonType="context-menu">
+      <sky-dropdown-menu>
+        <sky-dropdown-item>
+          <button type="button">
+            Add note
+          </button>
+        </sky-dropdown-item>
+        <sky-dropdown-item>
+          <button type="button">
+            Change status
+          </button>
+        </sky-dropdown-item>
+        <sky-dropdown-item>
+          <button type="button">
+            Assign owner
+          </button>
+        </sky-dropdown-item>
+      </sky-dropdown-menu>
+    </sky-dropdown>
+
 </ng-template>
