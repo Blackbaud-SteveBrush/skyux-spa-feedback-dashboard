@@ -1,0 +1,135 @@
+<sky-list [data]="items" [defaultView]="grid">
+  <sky-list-toolbar>
+    <sky-list-secondary-actions>
+      <sky-list-column-selector-action [gridView]="grid">
+      </sky-list-column-selector-action>
+    </sky-list-secondary-actions>
+  </sky-list-toolbar>
+
+  <sky-list-view-grid fit="scroll" #grid>
+    <sky-grid-column
+      field="contextmenu"
+      [locked]="true"
+      heading=""
+      width="40"
+      description="Feedback actions"
+      [template]="menuTemplate"
+      >
+    </sky-grid-column>
+    <sky-grid-column
+      field="status"
+      heading="Status"
+      width="150"
+      description="Feedback status"
+      >
+    </sky-grid-column>
+    <sky-grid-column
+      field="email"
+      heading="Email address"
+      width="250"
+      description="Email address of the respondent"
+      >
+    </sky-grid-column>
+    <sky-grid-column
+      field="firstname"
+      heading="First name"
+      width="150"
+      description="First name of the respondent"
+      >
+    </sky-grid-column>
+    <sky-grid-column
+      field="lastname"
+      heading="Last name"
+      width="150"
+      description="Last name of the respondent"
+      >
+    </sky-grid-column>
+    <sky-grid-column
+      field="feedback"
+      heading="Feedback"
+      width="40"
+      description="Helpful?"
+      [template]="feedbackStatusTemplate"
+      >
+    </sky-grid-column>
+    <sky-grid-column
+      field="dnc"
+      heading="Do Not Contact"
+      width="60"
+      description="Wants to be contacted?"
+      [template]="feedbackDncTemplate"
+      >
+    </sky-grid-column>
+    <sky-grid-column
+      field="assigned"
+      heading="Assigned to"
+      width="200"
+      description="Feedback follow-up assigned to?"
+      >
+    </sky-grid-column>
+    <sky-grid-column
+      field="datereceived"
+      heading="Date"
+      width="125"
+      description="Date feedback was received"
+      >
+    </sky-grid-column>
+    <sky-grid-column
+      field="notes"
+      heading="Note"
+      width="250"
+      description="Feedback notes received"
+      [template]="notesTemplate"
+      >
+    </sky-grid-column>
+  </sky-list-view-grid>
+</sky-list>
+
+<ng-template let-row="row" let-value="value" #feedbackStatusTemplate>
+  <div class="feedback-status" title="{{value}}">
+    <div *ngIf="value === 'positive'" class="positive">
+      <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+    </div>
+    <div *ngIf="value === 'negative'" class="negative">
+      <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template let-row="row" let-value="value" #feedbackDncTemplate>
+  <div class="feedback-status" title="{{value}}">
+    <div *ngIf="value === 'true'" class="donotcontact" >
+      <i class="fa fa-ban" aria-hidden="true"></i>
+    </div>
+    <div *ngIf="value === 'false'" class="contact">
+    </div>
+  </div>
+</ng-template>
+
+<ng-template let-value="value" #notesTemplate>
+    <sky-text-expand maxLength="70" maxExpandedLength="70" expandModalTitle="Feedback" text="{{value}}">
+      </sky-text-expand>
+</ng-template>
+
+<ng-template let-row="row" #menuTemplate>
+    <sky-dropdown buttonType="context-menu">
+      <sky-dropdown-menu>
+        <sky-dropdown-item>
+          <button type="button">
+            Add note
+          </button>
+        </sky-dropdown-item>
+        <sky-dropdown-item>
+          <button type="button">
+            Change status
+          </button>
+        </sky-dropdown-item>
+        <sky-dropdown-item>
+          <button type="button">
+            Assign owner
+          </button>
+        </sky-dropdown-item>
+      </sky-dropdown-menu>
+    </sky-dropdown>
+
+</ng-template>
