@@ -5,4 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './grid-dnc-feedback.component.html',
   styleUrls: ['./grid-feedback.component.scss']
 })
-export class GridDNCeedbackComponent { }
+export class GridDNCFeedbackComponent { }
