@@ -21,74 +21,50 @@
       heading="Date"
       width="125"
       description="Date feedback was received"
+      [template]="feedbackDate"
       >
     </sky-grid-column>
     <sky-grid-column
       field="status"
       heading="Status"
-      width="150"
+      width="100"
       description="Feedback status"
       >
     </sky-grid-column>
     <sky-grid-column
-      field="user.email"
-      heading="Email address"
-      width="250"
-      description="Email address of the respondent"
-      >
-    </sky-grid-column>
-    <sky-grid-column
-      field="user"
-      heading="Name"
-      width="200"
-      description="Name of the respondent"
-      [template]="feedbackUsernameTemplate"
-      >
-    </sky-grid-column>
-    <sky-grid-column
-      field="url"
-      heading="Page"
-      width="150"
-      description="Page they were on when they provided feedback."
-      >
-    </sky-grid-column>
-    <sky-grid-column
       field="type"
-      heading="Feedback"
+      heading="Type"
       width="40"
       description="Helpful?"
       [template]="feedbackStatusTemplate"
       >
     </sky-grid-column>
     <sky-grid-column
-      field="do_not_contact"
-      heading="Do Not Contact"
-      width="60"
-      description="Wants to be contacted?"
-      [template]="feedbackDncTemplate"
-      >
-    </sky-grid-column>
-    <sky-grid-column
-      field="assigned_to"
-      heading="Assigned to"
-      width="200"
-      description="Feedback follow-up assigned to?"
-      >
-    </sky-grid-column>
-    <sky-grid-column
-      field="comment"
+      field="commentGroup"
       heading="Feedback comments"
-      width="250"
+      width="450"
       description="Feedback comment received"
       [template]="commentTemplate"
       >
     </sky-grid-column>
+    <sky-grid-column
+      field="user"
+      heading="User"
+      width="220"
+      description="Name of the respondent"
+      [template]="feedbackUserInfoTemplate"
+      >
+    </sky-grid-column>
+    <sky-grid-column
+      field="url"
+      heading="Page"
+      width="250"
+      description="Page they were on when they provided feedback."
+      [template]="feedbackUrlTemplate"
+      >
+    </sky-grid-column>
   </sky-list-view-grid>
 </sky-list>
-
-<ng-template let-row="row" let-value="value" #feedbackUsernameTemplate>
-  {{ value.first_name }} {{ value.last_name }}
-</ng-template>
 
 <ng-template let-row="row" let-value="value" #feedbackStatusTemplate>
   <div class="feedback-status" title="{{value}}">
@@ -111,10 +87,23 @@
   </div>
 </ng-template>
 
+<ng-template let-row="row" let-value="value" #feedbackUserInfoTemplate>
+  <strong>{{ value.first_name }} {{ value.last_name }}</strong><br>
+  <a href="mailto:{{ value.email }}">{{ value.email }}</a><br>
+  <em style="color:#888;" *ngIf="value.do_not_contact">Please do not contact.</em>
+</ng-template>
 
 <ng-template let-value="value" #commentTemplate>
-    <sky-text-expand maxLength="70" maxExpandedLength="70" expandModalTitle="Feedback" text="{{value}}">
-    </sky-text-expand>
+  <sky-text-expand maxLength="150" maxExpandedLength="70" expandModalTitle="Feedback" text="{{value.comment}}">
+  </sky-text-expand>
+</ng-template>
+
+<ng-template let-value="value" #feedbackUrlTemplate>
+  <a [href]="value" target="_blank">{{value}}</a>
+</ng-template>
+
+<ng-template let-value="value" #feedbackDate>
+  {{ value | date:medium }}
 </ng-template>
 
 <ng-template let-row="row" #menuTemplate>

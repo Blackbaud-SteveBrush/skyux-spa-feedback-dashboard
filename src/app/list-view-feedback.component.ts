@@ -13,6 +13,7 @@ import { Feedback } from './shared/feedback';
 export class FeedbackListComponent implements OnInit {
 
   public items: Feedback[];
+  public feedbackUser: any;
 
   public constructor(private http: Http,
     private changeDetector: ChangeDetectorRef) {}
@@ -21,10 +22,20 @@ export class FeedbackListComponent implements OnInit {
     this.http.get('https://squaresfeedbackapi.azurewebsites.net/api/feedback/')
       .map(this.extractFeedbacks)
       .subscribe(values => {
-        console.log(values);
         this.items = values;
+        this.items.forEach((item: any) => {
+          item.user.do_not_contact = item.do_not_contact;
+          item.commentGroup = {
+            comment: item.comment,
+            url: item.url
+          };
+        });
         this.changeDetector.markForCheck();
       });
+  }
+
+  public combineFields(...fields): any[] {
+    return fields;
   }
 
   private extractFeedbacks(res: Response | any) {

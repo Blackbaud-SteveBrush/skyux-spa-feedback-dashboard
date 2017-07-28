@@ -3,6 +3,7 @@ export interface User {
     last_name: string;
     first_name: string;
     email: string;
+    do_not_contact?: string;
 }
 
 export interface Feedback {
