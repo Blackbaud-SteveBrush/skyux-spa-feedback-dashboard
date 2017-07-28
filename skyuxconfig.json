@@ -12,6 +12,10 @@
             {
               "title": "Home",
               "route": "/"
+            },
+            {
+              "title": "Record",
+              "route": "/record"
             }
           ]
         }
