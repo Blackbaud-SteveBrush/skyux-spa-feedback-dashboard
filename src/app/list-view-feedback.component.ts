@@ -11,13 +11,13 @@ import { Http } from '@angular/http';
 export class FeedbackListComponent implements OnInit {
 
   public items: any[];
-  
+
   public constructor(private http: Http) {}
-  
+
   public ngOnInit() {
     this.http.get(***URL***)
       .subscribe(res => {
         this.items = res.json();
       });
-  }  
+  }
 }
